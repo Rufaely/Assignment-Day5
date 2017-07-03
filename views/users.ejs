@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <table>
+      <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>City</th>
+        <th>Zip Code</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th>Website</th>
+      </tr>
+      <% for(var obj of users ) {
+%>
+<tr> <td><%= obj.id %></td>
+        <td><%= obj.name %></td>
+        <td><%= obj.username %></td>
+        <td><%= obj.email %></td>
+        <td><%= obj.address.city %></td>
+        <td><%= obj.address.zipcode %></td>
+        <td> <%=obj.address.geo.lat %></td>
+        <td> <%= obj.address.geo.lng %></td>
+        <td><%= obj.website %></td></tr>
+<%
+      }
+      %>
+      
+    </table>
+  </body>
+</html>
